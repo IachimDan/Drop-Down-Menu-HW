@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS Advanced Selectors | Dropdown menu</title>
+        <style>
+            body{
+                background-color: #456;
+            }
+            nav{
+                margin-top: 30px;
+                
+            }
+            nav label {
+                cursor: pointer;
+                user-select: none;
+                border-radius: 5px;
+                background-color: rgb(0, 167, 179);
+                padding: 10px 25px;
+                margin-left: 20px
+            }
+            nav label::after{
+                content: "▼";
+            }
+            nav ul {
+                display: none;
+                list-style-type: none;
+                padding-left: 22px;
+                margin-top: 7px;
+                
+            }
+            nav ul li{
+                list-style-type: none;
+                padding: 11px;
+                text-align: center;
+                width: 110px;
+                background-color: rgb(0, 116, 124);
+                box-shadow: 0 3px 2px 2px rgb(36, 45, 54);
+            }
+            nav ul li:nth-child(2){
+                background-color: rgb(0, 152, 163);
+                
+            }
+            nav ul li a{
+                text-decoration: none;
+                color: black;
+                text-align: center;
+                font-size: 18px;
+            }
+            nav ul li:hover{
+                background-color: rgb(134, 255, 249);
+ 
+            }
+            nav input:checked+label+ul {
+                display: block;
+            }
+            nav input:checked+label::after{
+                content: "▲";
+                color: white;
+                
+            }
+            
+            nav label:hover{
+                color: white;
+            }
+            nav input {
+                display: none;
+                
+            }
+        </style>
+    </head>
+    <body>
+        
+        <nav>
+
+            <input type="checkbox" id="toggler" />
+            <label for="toggler">
+                Dropdown
+            </label>
+            
+
+            <ul>
+                <li>
+                    <a href="">
+                        item1
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        item2
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        item3
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </body>
+</html>
